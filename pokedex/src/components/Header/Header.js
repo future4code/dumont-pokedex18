@@ -1,15 +1,14 @@
 import React from "react"
-import {HeaderMainDiv, GoToPokedexButton, PokedexTitle} from "./styled"
-import {goToHome, goToPokedex} from "../../routes/coordinator"
+import {HeaderMainDiv, LeftButtonHeader, PokedexTitle} from "./styled"
 import {useHistory} from "react-router-dom"
 
 const Header = (props) => {
     const history = useHistory();
-    const changeButton = props.rightButtonHeader ? <button onClick={()=>props.rightButtonHeader(history)}>name</button> : <div></div>
+    const changeButton = props.rightButtonHeader ? <button onClick={()=>props.rightButtonHeader(history)}>{props.rightButtonName}</button> : <div></div>
 
     return(
         <HeaderMainDiv>
-            <GoToPokedexButton onClick={()=>props.leftButtonHeader(history)}>Ir para a Pokedex</GoToPokedexButton>
+            <LeftButtonHeader onClick={()=>props.leftButtonHeader(history)}>{props.leftButtonName}</LeftButtonHeader>
             {changeButton}
             <PokedexTitle>POKEDEX</PokedexTitle>
         </HeaderMainDiv>

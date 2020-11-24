@@ -8,7 +8,7 @@ export const HeaderMainDiv = styled.div`
     background-color: #30A7D7;
 `
 
-export const GoToPokedexButton = styled.button`
+export const LeftButtonHeader = styled.button`
     height: 20px;
     margin-left: 10px;
 
