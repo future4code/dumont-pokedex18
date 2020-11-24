@@ -5,7 +5,7 @@ Nome dos integrantes:
 - Augusto Luna
 - Patrícia de Abreu Otarão
 
-Link do Surge: www.link.com.br
+Link do Surge: pokedex18.surge.sh
 
 O que funciona:
 - Item 1
