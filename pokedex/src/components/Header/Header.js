@@ -1,38 +1,15 @@
 import React from "react"
-import styled from "styled-components"
+import {HeaderMainDiv, LeftButtonHeader, PokedexTitle} from "./styled"
+import {useHistory} from "react-router-dom"
 
-const HeaderMainDiv = styled.div`
-    display: flex;
-    position: relative;
-    align-items: center;
-    height: 8vh;
-    background-color: #30A7D7;
-`
+const Header = (props) => {
+    const history = useHistory();
+    const changeButton = props.rightButtonHeader ? <button onClick={()=>props.rightButtonHeader(history)}>{props.rightButtonName}</button> : <div></div>
 
-const GoToPokedexButton = styled.button`
-    height: 20px;
-    margin-left: 10px;
-
-    &:hover{
-        cursor: pointer;
-    }
-
-`
-
-const PokedexTitle = styled.p`
-    display: flex;
-    left: 46%;
-    color: white;
-    font-weight: 700;
-    font-size: 30px;
-    position: absolute;
-`
-
-
-const Header = () => {
     return(
         <HeaderMainDiv>
-            <GoToPokedexButton>Ir para a Pokedex</GoToPokedexButton>
+            <LeftButtonHeader onClick={()=>props.leftButtonHeader(history)}>{props.leftButtonName}</LeftButtonHeader>
+            {changeButton}
             <PokedexTitle>POKEDEX</PokedexTitle>
         </HeaderMainDiv>
     )
