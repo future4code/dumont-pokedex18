@@ -28,8 +28,7 @@ const Router = () => {
                     <Details/>
                 </Route>
                 <Route exact path={"/Pokedex"}>
-                    <Header 
-                    leftButtonHeader={goToHome}
+                    <Header leftButtonHeader={goToHome}
                     leftButtonName={"Voltar para lista de pokemons"}
                     />
                     <Pokedex/>
