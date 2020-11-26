@@ -4,49 +4,51 @@ import { BASE_URL } from "../constants/urls";
 import GlobalStateContext from "./GlobalStateContext";
 
 const GlobalState = (props) => {
-    const [pokemon, setPokemon] = useState({})
+    const [pokemonList, setPokemonList] = useState([])
+    const [pokedex, setPokedex] = useState([])
 
-    useEffect(()=>{
-        getArrayPokemons()     
-    },[])
+    // useEffect(()=>{
+    //     getArrayPokemons()     
+    // },[])
 
 //requisição de API
-const getArrayPokemons = () => {
+const getPokemons = () => {
 
-    const listPokemon = [];
+    // const listPokemon = [];
 
-    for (let i = 1; i<20; i++) {
+    // for (let i = 1; i<20; i++) {
 
         axios
-        .get(`${BASE_URL}/${i}/`)
+        .get(`${BASE_URL}`)
         .then((response)=>{
-            console.log("SPRITES",response)
-            listPokemon[i - 1] = response.data
+            // console.log("SPRITES",response)
+            // listPokemon[i - 1] = response.data
 
-            console.log(listPokemon.length)
-            if (listPokemon.length === 19) {
-                setPokemon(listPokemon)
-            }
+            // console.log(listPokemon.length)
+            // if (listPokemon.length === 19) {
+            //     setPokemon(listPokemon)
+            // }
+            setPokemonList(response.data.results)
         })
         .catch((error)=>{
             console.log(error)
         })
-    }    
+    // }    
 }
 
-const states = {pokemon}
-const setters = {setPokemon}
-const requests = {getArrayPokemons}
+const states = {pokemonList, pokedex}
+const setters = {setPokemonList, setPokedex}
+const requests = {getPokemons}
 
 const data = {states, setters, requests}
 
 return (
     <div>
-        {console.log("TESTE",requests)}
+        {/* {console.log("TESTE",requests)} */}
         <GlobalStateContext.Provider value={data}>
             {props.children}   
-            {getArrayPokemons}   
-            {console.log("return do globalState", pokemon)}  
+            {/* {getArrayPokemons}   
+            {console.log("return do globalState", pokemon)}   */}
         </GlobalStateContext.Provider>
     </div>
     

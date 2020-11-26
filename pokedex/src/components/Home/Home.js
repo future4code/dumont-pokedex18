@@ -6,12 +6,12 @@ import GlobalStateContext from "../../global/GlobalStateContext";
 import  CardPokemon from "./CardPokemon";
 
 const Home = () => {
-    const {states, setters, requests} = useContext(GlobalStateContext)
+    const {states, requests} = useContext(GlobalStateContext)
     const history = useHistory();
 
-    // useEffect(()=>{
-    //     requests.getArrayPokemons()     
-    // },[])
+    useEffect(()=>{
+        requests.getPokemons()     
+    },[])
 
     return (
         <div>            
@@ -26,7 +26,9 @@ const Home = () => {
                 })}
                  */}
                  {/* <img src={data.results.sprites.front_default}/> */}
-                 teste
+                 {states.pokemonList && states.pokemonList.map((item) => {
+                     return 
+                 })}
                 <ButtonContainer>
                     <button>Adicionar à Pokedex</button>
                     <button onClick={()=>goToDetails(history)}>Ver detalhes</button>
