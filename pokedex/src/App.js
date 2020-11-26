@@ -1,12 +1,12 @@
 import React from "react";
 import Router from "./routes/Router"
-import Header from "./components/Header/Header"
+import GlobalState from "./global/GlobalState";
 
 const App = () => {
   return (
-    <div>
+    <GlobalState>
       <Router />
-    </div>
+    </GlobalState>
   )
 }
 
