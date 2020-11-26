@@ -13,30 +13,34 @@ function CardPokemon (props) {
 
     useEffect(()=>{
         getPokemonData()     
-    },[])
+    },[]) //sem isso tb funcionou. Não sei pq
 
+    //faz requisição da url
     const getPokemonData = () => {
         axios
         .get(props.url)
         .then((response)=>{
-            console.log("pokemons", response.data)
             setPokemonUrl(response.data)
         })
         .catch((error)=>{
             console.log(error)
         })
     }
-    
-    
+
+    const addToPokedex = () => {
+        console.log("adicionou na pokedex",pokemonUrl.sprites.front_default, pokemonUrl.name)
+        
+    }
+
     return(
         <div>
             {pokemonUrl && 
             <CardContainer>
                 <CardImage src={pokemonUrl.sprites.front_default}/>
                     <div>
-                        <p>{pokemonUrl.name}</p>
+                        <h4>{pokemonUrl.name}</h4>
                         <ButtonContainer>
-                            <button>Adicionar à Pokedex</button>
+                            <button onClick={addToPokedex}>Adicionar à Pokedex</button>
                             <button onClick={()=>goToDetails(history)}>Ver detalhes</button>
                         </ButtonContainer>
                     </div>
