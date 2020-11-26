@@ -27,6 +27,7 @@ function CardPokemon (props) {
         })
     }
     
+    
     return(
         <div>
             {pokemonUrl && 
