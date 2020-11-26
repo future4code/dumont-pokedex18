@@ -9,11 +9,43 @@ export const HeaderMainDiv = styled.div`
 `
 
 export const LeftButtonHeader = styled.button`
-    height: 20px;
     margin-left: 10px;
+    width: 8%;
+    height: 70%;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    border: none;
+    background-color: #004ba0;
+    color: white;
 
     &:hover{
         cursor: pointer;
+        background-color: #4dd0e1;
+        color: black;
+    }
+
+`
+
+export const RightButtonHeader = styled.button`
+    display: flex;
+    position: absolute;
+    right: 1%;
+    width: 8%;
+    height: 70%;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    border: none;
+    background-color: #004ba0;
+    color: white;
+    
+    &:hover{
+        cursor: pointer;
+        background-color: #4dd0e1;
+        color: black;
     }
 
 `

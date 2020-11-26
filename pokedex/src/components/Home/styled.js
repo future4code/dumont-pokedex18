@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import pokebola from "../../img/Pokebola.jpg"
 
 export const ScreenContainer = styled.div`
   display: flex; 
