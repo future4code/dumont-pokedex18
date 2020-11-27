@@ -3,6 +3,7 @@ import {CardImage, ButtonContainer, CardContainer} from "./styled"
 import {useRequestData} from "../../hooks/useRequestData"
 import { useHistory } from "react-router-dom"
 
+
 function CardPokemon (props) {
     const history = useHistory()
     const pokemon = useRequestData(props.url, undefined)
