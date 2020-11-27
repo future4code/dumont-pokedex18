@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react"
 import axios from "axios"
 import { useHistory } from "react-router-dom"
-import {CardImage, ButtonContainer, CardContainer} from "./styled"
+import {CardImage, ButtonContainer, CardContainer, PokemonNameAndButtons, PokemonName, AddToPokedexButton, GoToDetailsButton} from "./styled"
 import {goToDetails} from "../../routes/coordinator"
 
 function CardPokemon (props) {
@@ -33,13 +33,13 @@ function CardPokemon (props) {
             {pokemonUrl && 
             <CardContainer>
                 <CardImage src={pokemonUrl.sprites.front_default}/>
-                    <div>
-                        <p>{pokemonUrl.name}</p>
+                    <PokemonNameAndButtons>
+                        <PokemonName>{pokemonUrl.name}</PokemonName>
                         <ButtonContainer>
-                            <button>Adicionar à Pokedex</button>
-                            <button onClick={()=>goToDetails(history)}>Ver detalhes</button>
+                            <AddToPokedexButton>Adicionar à Pokedex</AddToPokedexButton>
+                            <GoToDetailsButton onClick={()=>goToDetails(history)}>Ver detalhes</GoToDetailsButton>
                         </ButtonContainer>
-                    </div>
+                    </PokemonNameAndButtons>
             </CardContainer> }
         </div>
     )
