@@ -20,7 +20,7 @@ const goToDetails = (id, name) => {
                             <div>
                                 <h4>{pokemon.name}</h4>
                                 <ButtonContainer>
-                                    <button  onClick={props.addToPokedex} >Adicionar à Pokedex</button>
+                                    <button onClick={props.removePokemon}>Remover da Pokedex</button>
                                     <button onClick={() => goToDetails(pokemon.id, pokemon.name)}>Ver detalhes</button>
                                 </ButtonContainer>
                             </div>

@@ -13,7 +13,8 @@ function Home() {
         
         //adiciona os pokemons na POKEDEX através do estado global
         const index = states.pokemonHome.findIndex((i)=> i.name === newItem.name)
-        let newPokedex = [...states.pokedex, newItem]
+        let newPokedex = [...states.pokedex]
+        newPokedex.push({...newItem, inPokedex:true})
         setters.setPokedex(newPokedex)
     
         //alterações na HOME
