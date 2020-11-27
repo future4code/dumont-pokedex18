@@ -8,10 +8,6 @@ function PokedexPage() {
     // const pokemon = useRequestData(props.url, undefined)
     // const history = useHistory()    
 
-    useEffect(()=>{
-        requests.getArrayPokemons()     
-    },[])
-
     return (
         <div>            
             <ScreenContainer>           
