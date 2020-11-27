@@ -5,8 +5,9 @@ import GlobalStateContext from "./GlobalStateContext";
 
 const GlobalState = (props) => {
     const [pokemonHome, setPokemonHome] = useState([])
+    const [pokedex, setPokedex] = useState([])  
 
-    useEffect(()=>{
+    useEffect(()=> {
         getArrayPokemons()     
     },[])
 
@@ -16,7 +17,6 @@ const getArrayPokemons = () => {
         axios
         .get(`${BASE_URL}`)
         .then((response)=>{
-            console.log("Axios response",response)
             setPokemonHome(response.data.results)
           
         })
@@ -25,8 +25,8 @@ const getArrayPokemons = () => {
         })  
 }
 
-const states = {pokemonHome}
-const setters = {setPokemonHome}
+const states = {pokemonHome, pokedex }
+const setters = {setPokemonHome, setPokedex}
 const requests = {getArrayPokemons}
 
 const data = {states, setters, requests}
@@ -35,7 +35,6 @@ return (
     <div>
         <GlobalStateContext.Provider value={data}>
             {props.children}   
-            {console.log("return do globalState", pokemonHome)}  
         </GlobalStateContext.Provider>
     </div>
     

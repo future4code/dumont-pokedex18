@@ -18,7 +18,7 @@ const Router = () => {
                     />
                     <Home/>
                 </Route>
-                <Route exact path={"/Details"} >
+                <Route exact path={"/Details/:id/:name"} >
                     <Header 
                     leftButtonHeader={goToHome}
                     leftButtonName={"Voltar"}

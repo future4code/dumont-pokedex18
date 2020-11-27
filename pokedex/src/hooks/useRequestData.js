@@ -1,24 +1,26 @@
-// import axios from "axios"
-// import React, {useState, useEffect} from "react"
+import axios from "axios"
+import React, {useState, useEffect} from "react"
 
-// export function useRequestData() {
+export function useRequestData(url,initialState) {
+   
 
-//     const [pokemonUrl, setPokemonUrl] = useState(undefined)
+    const [data, setData] = useState(initialState)
     
-//     useEffect(()=>{
-//         getPokemonData()     
-//     },)
+    useEffect(()=>{
+        getPokemonData()     
+    },[url])
 
-//     const getPokemonData = () => {
-//         axios
-//         .get(props.urls)
-//         .then((response)=>{
-//             console.log("pokemons", response.data)
-//             setPokemonUrl(response.data)
-//         })
-//         .catch((error)=>{
-//             console.log(error)
-//         })
-//     }
-// }
+    const getPokemonData = () => {
+        axios
+        .get(url)
+        .then((response)=>{
+            // console.log("pokemons", response.data)
+            setData(response.data)
+        })
+        .catch((error)=>{
+            console.log(error)
+        })
+    } 
+    return data
+}
 
