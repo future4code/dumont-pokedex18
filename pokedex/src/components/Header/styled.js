@@ -9,20 +9,47 @@ export const HeaderMainDiv = styled.div`
 `
 
 export const LeftButtonHeader = styled.button`
-    height: 20px;
     margin-left: 10px;
+    width: 8%;
+    height: 70%;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    border: none;
+    background-color: #004ba0;
+    color: white;
 
     &:hover{
         cursor: pointer;
+        background-color: #4dd0e1;
+        color: black;
     }
 
 `
 
-export const PokedexTitle = styled.p`
+export const RightButtonHeader = styled.button`
     display: flex;
-    left: 46%;
-    color: white;
-    font-weight: 700;
-    font-size: 30px;
     position: absolute;
+    right: 1%;
+    width: 8%;
+    height: 70%;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    border: none;
+    background-color: #004ba0;
+    color: white;
+    
+    &:hover{
+        cursor: pointer;
+        background-color: #4dd0e1;
+        color: black;
+    }
+`
+
+export const PokedexTitle = styled.img`
+    height: 7vh;
+    width: 12vw;
 `

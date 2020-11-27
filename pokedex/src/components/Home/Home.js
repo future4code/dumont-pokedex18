@@ -1,22 +1,27 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import {CardContainer, CardImage,ScreenContainer, ButtonContainer} from "./styled"
 import {useHistory} from "react-router-dom"
 import {goToDetails} from "../../routes/coordinator"
+import GlobalStateContext from "../../global/GlobalStateContext";
+import  CardPokemon from "./CardPokemon";
 
-const Home = (props) => {
-    const history = useHistory();
+function Home() {
+    const {states, requests} = useContext(GlobalStateContext)
+    // const history = useHistory();
+
+    useEffect(()=>{
+        requests.getArrayPokemons()     
+    },[])
+
     return (
-        <div>            
-        <ScreenContainer>
-            <CardContainer>
-                <CardImage alt={"pokemon"} src={"https://tvebrasil.com.br/wp-content/uploads/2019/02/pikachu_hi_pokemon.jpg"}/>
-                <ButtonContainer>
-                    <button>Adicionar à Pokedex</button>
-                    <button onClick={()=>goToDetails(history)}>Ver detalhes</button>
-                </ButtonContainer>
-            </CardContainer>
+        <div>
+        <ScreenContainer>           
+            {states.pokemonHome && states.pokemonHome.map((pokemons)=>{
+                 return <CardPokemon url={pokemons.url}/>
+            })}
         </ScreenContainer>
         </div>
     )
 }
 export default Home;
+
