@@ -1,28 +1,26 @@
 import axios from "axios"
 import React, {useState, useEffect} from "react"
 
-export function useRequestData(props,undefined) {
+export function useRequestData(url,initialState) {
+   
 
-    const [pokemonUrl, setPokemonUrl] = useState(undefined)
+    const [data, setData] = useState(initialState)
     
     useEffect(()=>{
         getPokemonData()     
-    },[])
+    },[url])
 
     const getPokemonData = () => {
         axios
-        .get(props.url)
+        .get(url)
         .then((response)=>{
             // console.log("pokemons", response.data)
-            setPokemonUrl(response.data)
+            setData(response.data)
         })
         .catch((error)=>{
             console.log(error)
         })
     } 
-    console.log("pokemons", pokemonUrl)
-    return (
-        {pokemonUrl}
-  )
+    return data
 }
 

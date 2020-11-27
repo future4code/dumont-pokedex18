@@ -1,25 +1,28 @@
-import React from "react";
-import {CardContainer, CardImage,ScreenContainer, ButtonContainer} from "./styled"
-import {goToDetails} from "../../routes/coordinator"
-import { useHistory } from "react-router-dom"
+import React, { useContext, useEffect } from "react";
+import {ScreenContainer} from "./styled"
+import GlobalStateContext from "../../global/GlobalStateContext";
+import  CardPokemon from "../Home/CardPokemon";
 
 function PokedexPage() {
-    const history = useHistory()    
+    const {states, setters, requests} = useContext(GlobalStateContext)
+    // const pokemon = useRequestData(props.url, undefined)
+    // const history = useHistory()    
+
+    useEffect(()=>{
+        requests.getArrayPokemons()     
+    },[])
 
     return (
         <div>            
-            <ScreenContainer>     
-                <CardContainer>
-                    <CardImage
-                    src="https://picsum.photos/300/200" alt=""
-                    />
-                    <ButtonContainer>
-                            <button>Remover da Pokedex</button>
-                            <button onClick={()=>goToDetails(history)}>Ver detalhes</button>
-                    </ButtonContainer>
-                </CardContainer>     
+            <ScreenContainer>           
+                {states.pokedex && states.pokedex.map((pokemons)=>{
+                    return <CardPokemon url={pokemons.url}/>
+                })}
             </ScreenContainer>
         </div>
     )
+
 }
+
 export default PokedexPage;
+

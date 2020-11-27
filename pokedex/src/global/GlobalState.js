@@ -5,9 +5,9 @@ import GlobalStateContext from "./GlobalStateContext";
 
 const GlobalState = (props) => {
     const [pokemonHome, setPokemonHome] = useState([])
-    const [pokedex, setPokedex] = useState([])
+    const [pokedex, setPokedex] = useState([])  
 
-    useEffect(()=>{
+    useEffect(()=> {
         getArrayPokemons()     
     },[])
 
