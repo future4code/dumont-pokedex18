@@ -1,6 +1,7 @@
 import React from "react"
 import {HeaderMainDiv, LeftButtonHeader, RightButtonHeader, PokedexTitle} from "./styled"
 import {useHistory} from "react-router-dom"
+import Logo from '../../assets/Logo.png'
 
 const Header = (props) => {
     const history = useHistory();
@@ -10,7 +11,9 @@ const Header = (props) => {
         <HeaderMainDiv>
             <LeftButtonHeader onClick={()=>props.leftButtonHeader(history)}>{props.leftButtonName}</LeftButtonHeader>
             {changeButton}
-            <PokedexTitle>POKEDEX</PokedexTitle>
+            <div>
+            <PokedexTitle src={Logo}  alt='logo'  />
+            </div>
         </HeaderMainDiv>
     )
 }

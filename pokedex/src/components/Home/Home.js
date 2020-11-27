@@ -14,7 +14,7 @@ function Home() {
     },[])
 
     return (
-        <div>            
+        <div>
         <ScreenContainer>           
             {states.pokemonHome && states.pokemonHome.map((pokemons)=>{
                  return <CardPokemon url={pokemons.url}/>

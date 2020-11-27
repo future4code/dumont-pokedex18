@@ -47,14 +47,9 @@ export const RightButtonHeader = styled.button`
         background-color: #4dd0e1;
         color: black;
     }
-
 `
 
-export const PokedexTitle = styled.p`
-    display: flex;
-    left: 46%;
-    color: white;
-    font-weight: 700;
-    font-size: 30px;
-    position: absolute;
+export const PokedexTitle = styled.img`
+    height: 7vh;
+    width: 12vw;
 `
