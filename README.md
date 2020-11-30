@@ -1,16 +1,19 @@
 # POKEDEX
 
 Nome dos integrantes: 
-- Pessoa 1
-- Pessoa 2
-- Pessoa 3
+- Tainah Bernardo
+- Augusto Luna
+- Patrícia de Abreu Otarão
 
-Link do Surge: www.link.com.br
+Link do Surge: 
+
+pokedex-18.surge.sh
 
 O que funciona:
-- Item 1
-- Item 2
+- Header com botões
+- Requisições de API na Home e na pokedex
+- Adicionar pokemon e botao de ver detalhes
 
 O que não funciona: 
-- Item 3
-- Item 4
+- Ainda falta fazer a requisição na página de detalhes
+- Botão deletar
